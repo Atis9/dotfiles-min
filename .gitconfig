@@ -21,3 +21,5 @@
   pager = less -r
 [grep]
   lineNumber = true
+[ghq]
+  root = ~/ghq
