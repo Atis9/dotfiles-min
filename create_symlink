@@ -1,0 +1,15 @@
+#!/bin/sh
+
+DOTFILES_DIR=$(cd $(dirname $0);pwd)
+
+# git
+ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
+
+# zsh/zprezto
+ln -s $DOTFILES_DIR/.zprezto ~/.zprezto
+ln -s $DOTFILES_DIR/.zlogin ~/.zlogin
+ln -s $DOTFILES_DIR/.zlogout ~/.zlogout
+ln -s $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
+ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
+ln -s $DOTFILES_DIR/.zshenv ~/.zshenv
+ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
