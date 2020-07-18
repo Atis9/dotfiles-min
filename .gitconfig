@@ -1,3 +1,23 @@
 [user]
-	email = atis@nyantech.com
-	name = Atis
+  email = atis@nyantech.com
+  name = Atis
+[color]
+  ui = true
+[alias]
+  st = status
+  co = checkout
+  cb = checkout -b
+  ba = branch --all
+  graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%ad %Cblue%an%x09%Cred%d %Creset%s'
+  gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%ad %Cblue%an%x09%Cred%d %Creset%s' -10
+  refs = !git checkout $(git branch | peco | awk '{ print $NF }')
+  br = branch
+[push]
+  default = simple
+[status]
+  showUntrackedFiles = all
+[core]
+  editor = vim
+  pager = less -r
+[grep]
+  lineNumber = true
