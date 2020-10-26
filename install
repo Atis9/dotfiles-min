@@ -1,6 +1,8 @@
 #!/bin/sh
 
 DOTFILES_DIR=$(cd $(dirname $0);pwd)
+CONFIG_HOME=$HOME/.config
+CACHE_HOME=$HOME/.cache
 
 # git
 ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
@@ -19,5 +21,4 @@ ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 
 # vim
 ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
-sh $DOTFILES_DIR/dein.vim/bin/installer.sh ~/.cache/dein
-
+sh $DOTFILES_DIR/dein.vim/bin/installer.sh $CACHE_HOME/dein
