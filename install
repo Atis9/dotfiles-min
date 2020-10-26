@@ -22,3 +22,7 @@ ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 # vim
 ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
 sh $DOTFILES_DIR/dein.vim/bin/installer.sh $CACHE_HOME/dein
+
+# fzf
+mkdir -p $CONFIG_HOME/zsh/plugins
+ln -s $DOTFILES_DIR/fzf-zsh-completions $CONFIG_HOME/zsh/plugins/fzf-zsh-completions
