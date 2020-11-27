@@ -5,24 +5,24 @@ CONFIG_HOME=$HOME/.config
 CACHE_HOME=$HOME/.cache
 
 # git
-ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
+[ ! -L ~/.gitconfig ] && ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
 
 # zsh/zprezto
-ln -s $DOTFILES_DIR/.zprezto ~/.zprezto
-ln -s $DOTFILES_DIR/.zlogin ~/.zlogin
-ln -s $DOTFILES_DIR/.zlogout ~/.zlogout
-ln -s $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
-ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
-ln -s $DOTFILES_DIR/.zshenv ~/.zshenv
-ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
+[ ! -L ~/.zprezto ]   && ln -s $DOTFILES_DIR/.zprezto ~/.zprezto
+[ ! -L ~/.zlogin ]    && ln -s $DOTFILES_DIR/.zlogin ~/.zlogin
+[ ! -L ~/.zlogout ]   && ln -s $DOTFILES_DIR/.zlogout ~/.zlogout
+[ ! -L ~/.zpreztorc ] && ln -s $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
+[ ! -L ~/.zprofile ]  && ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
+[ ! -L ~/.zshenv ]    && ln -s $DOTFILES_DIR/.zshenv ~/.zshenv
+[ ! -L ~/.zshrc ]     && ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
 
 # tmux
-ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
+[ ! -L ~/.tmux.conf ] && ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 
 # vim
-ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
+[ ! -L ~/.vimrc ]     && ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
 sh $DOTFILES_DIR/dein.vim/bin/installer.sh $CACHE_HOME/dein
 
 # fzf
 mkdir -p $CONFIG_HOME/zsh/plugins
-ln -s $DOTFILES_DIR/fzf-zsh-completions $CONFIG_HOME/zsh/plugins/fzf-zsh-completions
+[ ! -L $CONFIG_HOME/zsh/plugins/fzf-zsh-completions/ ] && ln -s $DOTFILES_DIR/fzf-zsh-completions/ $CONFIG_HOME/zsh/plugins/fzf-zsh-completions/
