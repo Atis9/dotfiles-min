@@ -24,5 +24,7 @@ CACHE_HOME=$HOME/.cache
 sh $DOTFILES_DIR/dein.vim/bin/installer.sh $CACHE_HOME/dein
 
 # fzf
+$DOTFILES_DIR/fzf/install --no-key-bindings --completion --no-update-rc --no-bash --no-fish
+
 mkdir -p $CONFIG_HOME/zsh/plugins
 [ ! -L $CONFIG_HOME/zsh/plugins/fzf-zsh-completions/ ] && ln -s $DOTFILES_DIR/fzf-zsh-completions/ $CONFIG_HOME/zsh/plugins/fzf-zsh-completions/
