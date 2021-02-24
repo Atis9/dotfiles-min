@@ -6,8 +6,13 @@ export PATH=$PATH:$GOPATH/bin
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if type rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+if type nodenv > /dev/null 2>&1; then
+  eval "$(nodenv init -)"
+fi
+
