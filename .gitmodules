@@ -4,9 +4,6 @@
 [submodule "dein.vim"]
 	path = dein.vim
 	url = https://github.com/Shougo/dein.vim.git
-[submodule "fzf-zsh-completions"]
-	path = fzf-zsh-completions
-	url = https://github.com/chitoku-k/fzf-zsh-completions.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
