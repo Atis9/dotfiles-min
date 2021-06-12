@@ -8,12 +8,7 @@ CACHE_HOME=$HOME/.cache
 [ ! -L ~/.gitconfig ] && ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
 
 # zsh/zprezto/zplug
-[ ! -L ~/.zprezto ]   && ln -s $DOTFILES_DIR/.zprezto/ ~/.zprezto
 [ ! -L ~/.zplug ]     && ln -s $DOTFILES_DIR/.zplug/ ~/.zplug
-[ ! -L ~/.zlogin ]    && ln -s $DOTFILES_DIR/.zlogin ~/.zlogin
-[ ! -L ~/.zlogout ]   && ln -s $DOTFILES_DIR/.zlogout ~/.zlogout
-[ ! -L ~/.zpreztorc ] && ln -s $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
-[ ! -L ~/.zprofile ]  && ln -s $DOTFILES_DIR/.zprofile ~/.zprofile
 [ ! -L ~/.zshenv ]    && ln -s $DOTFILES_DIR/.zshenv ~/.zshenv
 [ ! -L ~/.zshrc ]     && ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
 

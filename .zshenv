@@ -1,5 +1,3 @@
-source "$HOME/.zprezto/runcoms/zshenv"
-
 # Go
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
