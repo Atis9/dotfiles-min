@@ -24,6 +24,6 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # alias
-alias ls='ls -F --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -lha'
