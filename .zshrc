@@ -1,9 +1,7 @@
-alias cr='cd $(ghq root)/$(ghq list | peco)'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # zplug
 source "$HOME/.zplug/init.zsh"
 zplug "chitoku-k/fzf-zsh-completions"
+zplug "romkatv/powerlevel10k", as:theme, depth:1, use:"powerlevel10k.zsh-theme"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -13,3 +11,13 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
