@@ -1,6 +1,7 @@
 # zplug
 source "$HOME/.zplug/init.zsh"
-zplug "chitoku-k/fzf-zsh-completions"
+zplug "zsh-users/zsh-completions", as:plugin
+zplug "chitoku-k/fzf-zsh-completions", as:plugin
 zplug "romkatv/powerlevel10k", as:theme, depth:1, use:"powerlevel10k.zsh-theme"
 
 if ! zplug check --verbose; then
