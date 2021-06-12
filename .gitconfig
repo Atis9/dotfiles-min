@@ -10,7 +10,7 @@
   ba = branch --all
   graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%ad %Cblue%an%x09%Cred%d %Creset%s'
   gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%ad %Cblue%an%x09%Cred%d %Creset%s' -10
-  refs = !git checkout $(git branch | peco | awk '{ print $NF }')
+  refs = !git checkout $(git branch | fzf | awk '{ print $NF }')
   br = branch
 [push]
   default = simple
@@ -21,5 +21,3 @@
   pager = less -r
 [grep]
   lineNumber = true
-[ghq]
-  root = ~/ghq
