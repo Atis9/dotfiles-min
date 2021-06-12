@@ -21,3 +21,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# alias
+alias ls='ls -F --color=auto'
+alias ll='ls -lh'
+alias la='ls -lha'
