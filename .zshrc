@@ -24,6 +24,11 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # alias
-alias ls='ls --color=auto'
+if [ `uname` = "Darwin" ]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto'
+fi
+
 alias ll='ls -lh'
 alias la='ls -lha'
