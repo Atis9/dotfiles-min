@@ -1,6 +1,5 @@
 # Go
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -9,11 +8,7 @@ if type rbenv > /dev/null 2>&1; then
 fi
 
 # Rust
-. "$HOME/.cargo/env"
-
-# Deno
-export DENO_INSTALL="/home/atis/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"
