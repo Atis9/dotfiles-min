@@ -5,7 +5,6 @@ zplug "chitoku-k/fzf-zsh-completions", as:plugin
 zplug "docker/cli", as:plugin, depth:1, use:"contrib/completion/zsh"
 zplug "romkatv/powerlevel10k", as:theme, depth:1, use:"powerlevel10k.zsh-theme"
 
-
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
