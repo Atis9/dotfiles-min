@@ -14,6 +14,8 @@ CACHE_HOME=$HOME/.cache
 
 # tmux
 [ ! -L ~/.tmux.conf ] && ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
+[ ! -e ~/.tmux/plugins ] && mkdir -p ~/.tmux/plugins
+[ ! -L ~/.tmux/plugins/tpm ] && ln -s $DOTFILES_DIR/tpm ~/.tmux/plugins/tpm
 
 # vim
 [ ! -L ~/.vimrc ]     && ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
