@@ -1,25 +1,37 @@
 #!/bin/sh
 
-DOTFILES_DIR=$(cd $(dirname $0);pwd)
+create_symlink() {
+  if [ ! -L "$2" ]; then
+    ln -s "$1" "$2"
+  fi
+}
+
+create_directory() {
+  if [ ! -e "$1" ]; then
+    mkdir -p "$1"
+  fi
+}
+
+DOTFILES_DIR=$(cd "$(dirname "$0")";pwd)
 CONFIG_HOME=$HOME/.config
 CACHE_HOME=$HOME/.cache
 
 # git
-[ ! -L ~/.gitconfig ] && ln -s $DOTFILES_DIR/.gitconfig ~/.gitconfig
+create_symlink "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 
 # zsh/zprezto/zplug
-[ ! -L ~/.zplug ]     && ln -s $DOTFILES_DIR/.zplug/ ~/.zplug
-[ ! -L ~/.zshenv ]    && ln -s $DOTFILES_DIR/.zshenv ~/.zshenv
-[ ! -L ~/.zshrc ]     && ln -s $DOTFILES_DIR/.zshrc ~/.zshrc
+create_symlink "$DOTFILES_DIR/.zplug" "$HOME/.zplug"
+create_symlink "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv"
+create_symlink "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 
 # tmux
-[ ! -L ~/.tmux.conf ] && ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
-[ ! -e ~/.tmux/plugins ] && mkdir -p ~/.tmux/plugins
-[ ! -L ~/.tmux/plugins/tpm ] && ln -s $DOTFILES_DIR/tpm ~/.tmux/plugins/tpm
+create_symlink "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+create_directory "$HOME/.tmux/plugins"
+create_symlink "$DOTFILES_DIR/tpm" "$HOME/.tmux/plugins/tpm"
 
 # vim
-[ ! -L ~/.vimrc ]     && ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
-sh $DOTFILES_DIR/dein.vim/bin/installer.sh $CACHE_HOME/dein > /dev/null
+create_symlink "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
+sh "$DOTFILES_DIR/dein.vim/bin/installer.sh" "$CACHE_HOME/dein" > /dev/null
 
 # fzf
-$DOTFILES_DIR/fzf/install --no-key-bindings --completion --no-update-rc --no-bash --no-fish > /dev/null
+"$DOTFILES_DIR/fzf/install" --no-key-bindings --completion --no-update-rc --no-bash --no-fish > /dev/null
