@@ -21,3 +21,5 @@
   pager = less -r
 [grep]
   lineNumber = true
+[fetch]
+  prune = true
