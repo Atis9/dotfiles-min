@@ -16,22 +16,9 @@ DOTFILES_DIR=$(cd "$(dirname "$0")";pwd)
 CONFIG_HOME=$HOME/.config
 CACHE_HOME=$HOME/.cache
 
-# git
-create_symlink "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
-
 # zsh/zprezto/zplug
 create_symlink "$DOTFILES_DIR/.zplug" "$HOME/.zplug"
-create_symlink "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv"
 create_symlink "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
-
-# tmux
-create_symlink "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
-create_directory "$HOME/.tmux/plugins"
-create_symlink "$DOTFILES_DIR/tpm" "$HOME/.tmux/plugins/tpm"
-
-# vim
-create_symlink "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
-sh "$DOTFILES_DIR/dein.vim/bin/installer.sh" "$CACHE_HOME/dein" > /dev/null
 
 # fzf
 "$DOTFILES_DIR/fzf/install" --no-key-bindings --completion --no-update-rc --no-bash --no-fish > /dev/null
