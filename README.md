@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-git clone --recursive git@github.com:Atis9/dotfiles-min.git .dotfiles
+git clone --recursive https://github.com/Atis9/dotfiles-min.git .dotfiles-min
 cd .dotfiles
 ./install
 ```
